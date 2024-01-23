@@ -26,8 +26,8 @@ function Investment_Form() {
             };
 
             // Calculate investment results with updating state
-            const results = calculateInvestmentResults(updatedInvestmentData);
-            console.log(results);
+            const returnOfInvestment = calculateInvestmentResults(updatedInvestmentData);
+            console.log(returnOfInvestment);
 
             return updatedInvestmentData;
         });
@@ -69,8 +69,7 @@ function Investment_Form() {
             <div className="zeroParagraph">
                 {investmentData.duration === 0 ? durationParagraph : null}
             </div>
-        
-        
+           
         </form>    
     )
 }

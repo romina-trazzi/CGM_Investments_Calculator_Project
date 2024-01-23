@@ -14,6 +14,12 @@ body {
   min-height: 100vh;
 }
 
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 1rem;
+}
+
 
 
 

@@ -1,11 +1,28 @@
-/* #result {
+#result {
+    display: flex;
+	justify-content: center;
+	width: 50%;
+	height: auto;
+	margin: 4rem auto;
+	padding: 1rem;
 }
 
-#result thead {
+#result thead  {
+    width: 100%;
+    color: rgb(43,153,109);
 }
+
+#result thead tr {
+    display:flex;
+    justify-content: space-between;
+}
+
+
+
+
+/*
 
 #result tbody {
 }
 
-.center {
-}  */
+*/

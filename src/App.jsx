@@ -8,6 +8,7 @@ function App() {
       <Header />
       <Investment_Form />
       <Investment_Table />
+      <footer> Made by Romina Trazzi ~ 2024 ~ </footer>
     </div>
 
   )
