@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Investment_Form.css';
+import { calculateInvestmentResults } from '../../util/investment';
 
 function Investment_Form() {
 
@@ -10,20 +11,26 @@ function Investment_Form() {
         expectedReturn: 0,
         duration: 0
     })
-
+    
     const durationParagraph = <p>Please enter a duration greater than zero.</p>
     
     // HandlerFunctions
     function inputChangeHandler (event) {
-
-        const { name, value } = event.target
-
-        setInvestmentData((prevInvestmentData) => ({
-            ...prevInvestmentData,
-            [name]: value
-        }))
         
-        console.log(investmentData);
+        const { name, value } = event.target
+        
+        setInvestmentData((prevInvestmentData) => {
+            const updatedInvestmentData = {
+                ...prevInvestmentData,
+                [name]: value
+            };
+
+            // Calculate investment results with updating state
+            const results = calculateInvestmentResults(updatedInvestmentData);
+            console.log(results);
+
+            return updatedInvestmentData;
+        });
     }
 
     return (
