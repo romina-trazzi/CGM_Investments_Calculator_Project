@@ -1,31 +1,71 @@
-import './Investment_Form.css'
-function Investment_Form() {
-  return (
-    <form>
-        
-        <div className="input_group">
-            <div id="user-input">
-                <label>INITIAL INVESTMENT</label>
-                <input type="number" id="initial-investment" placeholder="Initial Investment" min="0" />
-            </div>
-            <div id="user-input">
-                <label>ANNUAL INVESTMENT</label>
-                <input type="number" id="annual-investment" placeholder="Annual Investment" min="0" />
-            </div>
-        </div>
+import { useState } from 'react';
+import './Investment_Form.css';
 
-        <div className="input_group">
-            <div id="user-input">
-                <label>EXPECTED RETURN</label>
-                <input type="number" id="expected-return" placeholder="Expected Return" min="0"/>
+function Investment_Form() {
+
+    // Initial DataSet
+    const [investmentData, setInvestmentData] = useState({
+        initialInvestment: 0,
+        annualInvestment: 0,
+        expectedReturn: 0,
+        duration: 0
+    })
+
+    const durationParagraph = <p>Please enter a duration greater than zero.</p>
+    
+    // HandlerFunctions
+    function inputChangeHandler (event) {
+
+        const { name, value } = event.target
+
+        setInvestmentData((prevInvestmentData) => ({
+            ...prevInvestmentData,
+            [name]: value
+        }))
+        
+        console.log(investmentData);
+    }
+
+    return (
+        <form>
+            
+            <div className="formData">
+
+                <div className="input_group">
+                    <div id="user-input">
+                        <label>INITIAL INVESTMENT</label>
+                        <input type="number" name="initialInvestment" placeholder="Initial Investment" min="0" defaultValue={0} onChange={inputChangeHandler} />
+                    </div>
+
+                    <div id="user-input">
+                        <label>EXPECTED RETURN</label>
+                        <input type="number" name="expectedReturn" placeholder="Expected Return" min="0" defaultValue={0} onChange={inputChangeHandler}/>
+                    </div>
+                </div>
+
+                <div className="input_group">
+
+                    <div id="user-input">
+                        <label>ANNUAL INVESTMENT</label>
+                        <input type="number" name="annualInvestment" placeholder="Annual Investment" min="0" defaultValue={0} onChange={inputChangeHandler} />
+                    </div>
+                
+                    <div id="user-input">
+                        <label>DURATION</label>
+                        <input type="number" name="duration" placeholder="Duration" min="0" max="20" defaultValue={0} onChange={inputChangeHandler}/>                     
+                    </div>
+                    
+                </div>
+
             </div>
-            <div id="user-input">
-                <label>DURATION</label>
-                <input type="number" id="duration" placeholder="Duration" min="0" max="20"/>                     
+            
+            <div className="zeroParagraph">
+                {investmentData.duration === 0 ? durationParagraph : null}
             </div>
-        </div>
-    </form>    
-  )
+        
+        
+        </form>    
+    )
 }
 
 export default Investment_Form
