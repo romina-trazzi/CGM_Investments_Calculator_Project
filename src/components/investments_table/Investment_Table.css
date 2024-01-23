@@ -1,28 +1,22 @@
 #result {
-    display: flex;
-	justify-content: center;
-	width: 50%;
-	height: auto;
-	margin: 4rem auto;
-	padding: 1rem;
+   width: 50%;
+   height: auto;
+   margin: 4rem auto;
 }
 
-#result thead  {
-    width: 100%;
-    color: rgb(43,153,109);
-}
-
+/* Table T-head */
 #result thead tr {
-    display:flex;
-    justify-content: space-between;
+    color: rgb(43,153,109);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) ;
+    grid-template-rows: auto;
 }
 
-
-
-
-/*
-
-#result tbody {
+/* Table T-body */
+#result tbody tr {
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) ;
+    grid-template-rows: auto;
 }
 
-*/

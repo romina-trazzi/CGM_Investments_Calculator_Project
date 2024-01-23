@@ -1,6 +1,12 @@
-import './Investment_Table.css'
+import './Investment_Table.css';
+import { formatter } from '../../util/investment';
 
-function Investment_Table({year}) {
+function Investment_Table({returnOfInvestment}) {
+
+  console.log(returnOfInvestment.duration);
+  
+  // for (const investment of returnOfInvestment) {
+    
   return (
     <table id ="result"> 
 
@@ -16,11 +22,11 @@ function Investment_Table({year}) {
 
       <tbody>
         <tr>
-          <td>{year}</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>{returnOfInvestment.duration}</td>
+          <td>{returnOfInvestment.initialInvestment}</td>
+          <td>{returnOfInvestment.expectedReturn}</td>
+          <td>Formula</td>
+          <td>{returnOfInvestment.annualInvestment}</td> 
         </tr>
       </tbody>
 

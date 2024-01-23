@@ -2,35 +2,30 @@ import { useState } from 'react';
 import './Investment_Form.css';
 import { calculateInvestmentResults } from '../../util/investment';
 
-function Investment_Form() {
+function Investment_Form({returnOfInvestment, onReturnOfInvestment}) {
 
-    // Initial DataSet
-    const [investmentData, setInvestmentData] = useState({
-        initialInvestment: 0,
-        annualInvestment: 0,
-        expectedReturn: 0,
-        duration: 0
-    })
-    
     const durationParagraph = <p>Please enter a duration greater than zero.</p>
     
-    // HandlerFunctions
+    // HandlerFunction
     function inputChangeHandler (event) {
-        
         const { name, value } = event.target
         
-        setInvestmentData((prevInvestmentData) => {
-            const updatedInvestmentData = {
-                ...prevInvestmentData,
-                [name]: value
-            };
+    //     // Updating state with new investment
+    //     setInvestmentData((prevInvestmentData) => {
+    //         const updatedInvestmentData = {
+    //             ...prevInvestmentData,
+    //             [name]: +value
+    //         };
 
-            // Calculate investment results with updating state
-            const returnOfInvestment = calculateInvestmentResults(updatedInvestmentData);
-            console.log(returnOfInvestment);
+    //         // Calculate investment results after updating state
+    //         const returnOfInvestment = calculateInvestmentResults(updatedInvestmentData);
 
-            return updatedInvestmentData;
-        });
+    //         // Props Bottom up from here to App.jsx
+    //         onReturnOfInvestment(returnOfInvestment);
+            
+    //         return updatedInvestmentData;
+    //     });
+
     }
 
     return (
@@ -41,12 +36,26 @@ function Investment_Form() {
                 <div className="input_group">
                     <div id="user-input">
                         <label>INITIAL INVESTMENT</label>
-                        <input type="number" name="initialInvestment" placeholder="Initial Investment" min="0" defaultValue={0} onChange={inputChangeHandler} />
+                        <input 
+                            type="number" 
+                            name="initialInvestment" 
+                            placeholder="Initial Investment"
+                            value={returnOfInvestment.initialInvestment}
+                            min="0" 
+                            onChange={inputChangeHandler} 
+                        />
                     </div>
 
                     <div id="user-input">
                         <label>EXPECTED RETURN</label>
-                        <input type="number" name="expectedReturn" placeholder="Expected Return" min="0" defaultValue={0} onChange={inputChangeHandler}/>
+                        <input 
+                            type="number" 
+                            name="expectedReturn" 
+                            placeholder="Expected Return"
+                            value={returnOfInvestment.expectedReturn} 
+                            min="0" 
+                            onChange={inputChangeHandler}
+                        />
                     </div>
                 </div>
 
@@ -54,12 +63,27 @@ function Investment_Form() {
 
                     <div id="user-input">
                         <label>ANNUAL INVESTMENT</label>
-                        <input type="number" name="annualInvestment" placeholder="Annual Investment" min="0" defaultValue={0} onChange={inputChangeHandler} />
+                        <input 
+                            type="number" 
+                            name="annualInvestment" 
+                            placeholder="Annual Investment" 
+                            value={returnOfInvestment.annualInvestment}
+                            min="0" 
+                            onChange={inputChangeHandler} 
+                        />
                     </div>
                 
                     <div id="user-input">
                         <label>DURATION</label>
-                        <input type="number" name="duration" placeholder="Duration" min="0" max="20" defaultValue={0} onChange={inputChangeHandler}/>                     
+                        <input 
+                            type="number" 
+                            name="duration" 
+                            placeholder="Duration" 
+                            value={returnOfInvestment.duration}
+                            min="0" 
+                            max="20"  
+                            onChange={inputChangeHandler}
+                        />                     
                     </div>
                     
                 </div>
@@ -67,7 +91,7 @@ function Investment_Form() {
             </div>
             
             <div className="zeroParagraph">
-                {investmentData.duration === 0 ? durationParagraph : null}
+                {returnOfInvestment.duration === 0 ? durationParagraph : null}
             </div>
            
         </form>    
