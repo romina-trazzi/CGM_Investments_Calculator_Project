@@ -1,8 +1,6 @@
-
 import './Investment_Form.css';
 
 function Investment_Form({investmentData, onUpdateData}) {
-
     const durationParagraph = <p>Please enter a duration greater than zero.</p>
     
     // HandlerFunction
@@ -21,9 +19,7 @@ function Investment_Form({investmentData, onUpdateData}) {
 
     return (
         <form>
-            
             <div className="formData">
-
                 <div className="input_group">
                     <div id="user-input">
                         <label>INITIAL INVESTMENT</label>
@@ -36,7 +32,6 @@ function Investment_Form({investmentData, onUpdateData}) {
                             onChange={inputChangeHandler} 
                         />
                     </div>
-
                     <div id="user-input">
                         <label>EXPECTED RETURN</label>
                         <input 
@@ -49,7 +44,6 @@ function Investment_Form({investmentData, onUpdateData}) {
                         />
                     </div>
                 </div>
-
                 <div className="input_group">
 
                     <div id="user-input">
@@ -63,7 +57,6 @@ function Investment_Form({investmentData, onUpdateData}) {
                             onChange={inputChangeHandler} 
                         />
                     </div>
-                
                     <div id="user-input">
                         <label>DURATION</label>
                         <input 
@@ -75,16 +68,12 @@ function Investment_Form({investmentData, onUpdateData}) {
                             max="20"  
                             onChange={inputChangeHandler}
                         />                     
-                    </div>
-                    
+                    </div> 
                 </div>
-
             </div>
-            
             <div className="zeroParagraph">
                 {investmentData.duration === 0 ? durationParagraph : null}
             </div>
-           
         </form>    
     )
 }
