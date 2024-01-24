@@ -1,6 +1,5 @@
-import { useState } from 'react';
+
 import './Investment_Form.css';
-import { calculateInvestmentResults } from '../../util/investment';
 
 function Investment_Form({returnOfInvestment, onReturnOfInvestment}) {
 
@@ -9,24 +8,18 @@ function Investment_Form({returnOfInvestment, onReturnOfInvestment}) {
     // HandlerFunction
     function inputChangeHandler (event) {
         const { name, value } = event.target
-        
-    //     // Updating state with new investment
-    //     setInvestmentData((prevInvestmentData) => {
-    //         const updatedInvestmentData = {
-    //             ...prevInvestmentData,
-    //             [name]: +value
-    //         };
 
-    //         // Calculate investment results after updating state
-    //         const returnOfInvestment = calculateInvestmentResults(updatedInvestmentData);
+        // Update DataSet
+        const updatedInvestmentData = {
+            ...returnOfInvestment,
+            [name]: +value
+        };
+       
+        // Bottom-up prop from here to parent
+        onReturnOfInvestment(updatedInvestmentData);
 
-    //         // Props Bottom up from here to App.jsx
-    //         onReturnOfInvestment(returnOfInvestment);
-            
-    //         return updatedInvestmentData;
-    //     });
-
-    }
+        console.log(updatedInvestmentData);
+    };
 
     return (
         <form>

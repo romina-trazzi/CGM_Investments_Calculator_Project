@@ -3,9 +3,6 @@ import { formatter } from '../../util/investment';
 
 function Investment_Table({returnOfInvestment}) {
 
-  console.log(returnOfInvestment.duration);
-  
-  // for (const investment of returnOfInvestment) {
     
   return (
     <table id ="result"> 
