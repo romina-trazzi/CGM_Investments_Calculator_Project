@@ -13,12 +13,8 @@ form {
 
 .formData {
     display: flex;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
 #user-input { 
