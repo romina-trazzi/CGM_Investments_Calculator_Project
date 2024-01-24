@@ -1,7 +1,7 @@
 
 import './Investment_Form.css';
 
-function Investment_Form({returnOfInvestment, onReturnOfInvestment}) {
+function Investment_Form({investmentData, onUpdateData}) {
 
     const durationParagraph = <p>Please enter a duration greater than zero.</p>
     
@@ -11,14 +11,12 @@ function Investment_Form({returnOfInvestment, onReturnOfInvestment}) {
 
         // Update DataSet
         const updatedInvestmentData = {
-            ...returnOfInvestment,
+            ...investmentData,
             [name]: +value
         };
        
         // Bottom-up prop from here to parent
-        onReturnOfInvestment(updatedInvestmentData);
-
-        console.log(updatedInvestmentData);
+        onUpdateData(updatedInvestmentData);
     };
 
     return (
@@ -33,7 +31,7 @@ function Investment_Form({returnOfInvestment, onReturnOfInvestment}) {
                             type="number" 
                             name="initialInvestment" 
                             placeholder="Initial Investment"
-                            value={returnOfInvestment.initialInvestment}
+                            value={investmentData.initialInvestment}
                             min="0" 
                             onChange={inputChangeHandler} 
                         />
@@ -45,7 +43,7 @@ function Investment_Form({returnOfInvestment, onReturnOfInvestment}) {
                             type="number" 
                             name="expectedReturn" 
                             placeholder="Expected Return"
-                            value={returnOfInvestment.expectedReturn} 
+                            value={investmentData.expectedReturn} 
                             min="0" 
                             onChange={inputChangeHandler}
                         />
@@ -60,7 +58,7 @@ function Investment_Form({returnOfInvestment, onReturnOfInvestment}) {
                             type="number" 
                             name="annualInvestment" 
                             placeholder="Annual Investment" 
-                            value={returnOfInvestment.annualInvestment}
+                            value={investmentData.annualInvestment}
                             min="0" 
                             onChange={inputChangeHandler} 
                         />
@@ -72,7 +70,7 @@ function Investment_Form({returnOfInvestment, onReturnOfInvestment}) {
                             type="number" 
                             name="duration" 
                             placeholder="Duration" 
-                            value={returnOfInvestment.duration}
+                            value={investmentData.duration}
                             min="0" 
                             max="20"  
                             onChange={inputChangeHandler}
@@ -84,7 +82,7 @@ function Investment_Form({returnOfInvestment, onReturnOfInvestment}) {
             </div>
             
             <div className="zeroParagraph">
-                {returnOfInvestment.duration === 0 ? durationParagraph : null}
+                {investmentData.duration === 0 ? durationParagraph : null}
             </div>
            
         </form>    

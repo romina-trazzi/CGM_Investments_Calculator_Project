@@ -1,7 +1,7 @@
 import './Investment_Table.css';
 import { formatter } from '../../util/investment';
 
-function Investment_Table({returnOfInvestment}) {
+function Investment_Table({investmentData, resultOfInvestment}) {
 
     
   return (
@@ -19,11 +19,11 @@ function Investment_Table({returnOfInvestment}) {
 
       <tbody>
         <tr>
-          <td>{returnOfInvestment.duration}</td>
-          <td>{returnOfInvestment.initialInvestment}</td>
-          <td>{returnOfInvestment.expectedReturn}</td>
+          <td>{investmentData.duration}</td>
+          <td>{investmentData.initialInvestment}</td>
+          <td>{investmentData.expectedReturn}</td>
           <td>Formula</td>
-          <td>{returnOfInvestment.annualInvestment}</td> 
+          <td>{investmentData.annualInvestment}</td> 
         </tr>
       </tbody>
 

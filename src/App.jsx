@@ -15,7 +15,7 @@ function App() {
   })
 
   // Updating state with new investment
-  function handleReturnOfInvestment(updatedInvestmentData) {
+  function handleUpdateData(updatedInvestmentData) {
 
     // Update state
     setInvestmentData((prevInvestmentData) => {
@@ -30,8 +30,8 @@ function App() {
   return (
     <div>
       <Header />
-      <Investment_Form  returnOfInvestment={investmentData} onReturnOfInvestment={handleReturnOfInvestment}/>
-      <Investment_Table returnOfInvestment={investmentData}/>
+      <Investment_Form  investmentData={investmentData} onUpdateData={handleUpdateData}/>
+      <Investment_Table investmentData={investmentData} resultOfInvestment={calculateInvestmentResults(investmentData)}/>
     </div>
 
   )
