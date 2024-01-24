@@ -5,6 +5,8 @@ import {calculateInvestmentResults } from './util/investment';
 import {useState} from 'react';
 
 function App() {
+
+  const durationParagraph = <p className="zeroParagraph">Please enter a duration greater than zero.</p>
   
   // Initial DataSet
   const [investmentData, setInvestmentData] = useState({
@@ -31,7 +33,9 @@ function App() {
     <div>
       <Header />
       <Investment_Form investmentData={investmentData} onUpdateData={handleUpdateData}/>
-      <Investment_Table investmentData={investmentData} onResultOfInvestment={calculateInvestmentResults(investmentData)}/>
+        {investmentData.duration === 0 ? durationParagraph : 
+          <Investment_Table investmentData={investmentData} onResultOfInvestment={calculateInvestmentResults(investmentData)}/>
+        }
     </div>
 
   )

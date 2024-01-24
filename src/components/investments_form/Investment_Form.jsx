@@ -1,7 +1,7 @@
 import './Investment_Form.css';
 
 function Investment_Form({investmentData, onUpdateData}) {
-    const durationParagraph = <p>Please enter a duration greater than zero.</p>
+    
     
     // HandlerFunction
     function inputChangeHandler (event) {
@@ -71,9 +71,7 @@ function Investment_Form({investmentData, onUpdateData}) {
                     </div> 
                 </div>
             </div>
-            <div className="zeroParagraph">
-                {investmentData.duration === 0 ? durationParagraph : null}
-            </div>
+         
         </form>    
     )
 }

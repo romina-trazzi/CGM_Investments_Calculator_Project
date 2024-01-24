@@ -27,8 +27,8 @@ function Investment_Table({investmentData, onResultOfInvestment}) {
               <td>{investment.year}</td>
               <td>{formatter.format(investment.valueEndOfYear)}</td>
               <td>{formatter.format(investment.interest)}</td>
-              <td>{formatter.format (totalInterest)}</td>
-              <td>{formatter.format (totalAmountInvested)}</td>
+              <td>{formatter.format(totalInterest)}</td>
+              <td>{formatter.format(totalAmountInvested)}</td>
             </tr>
           )
         })}
