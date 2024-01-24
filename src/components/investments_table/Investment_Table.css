@@ -7,6 +7,7 @@
 /* Table T-head */
 #result thead tr {
     color: rgb(43,153,109);
+    font-size: 1rem;
     display: grid;
     grid-template-columns: repeat(5, 1fr) ;
     grid-template-rows: auto;
@@ -19,6 +20,6 @@
     grid-template-columns: repeat(5, 1fr) ;
     grid-template-rows: auto;
     text-align: center;
-    padding: 1rem;
+    margin-top: 1rem; 
 }
 

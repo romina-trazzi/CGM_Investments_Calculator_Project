@@ -31,7 +31,7 @@ function App() {
     <div>
       <Header />
       <Investment_Form investmentData={investmentData} onUpdateData={handleUpdateData}/>
-      <Investment_Table onResultOfInvestment={calculateInvestmentResults(investmentData)}/>
+      <Investment_Table investmentData={investmentData} onResultOfInvestment={calculateInvestmentResults(investmentData)}/>
     </div>
 
   )
