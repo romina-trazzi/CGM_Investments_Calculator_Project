@@ -30,8 +30,8 @@ function App() {
   return (
     <div>
       <Header />
-      <Investment_Form  investmentData={investmentData} onUpdateData={handleUpdateData}/>
-      <Investment_Table investmentData={investmentData} resultOfInvestment={calculateInvestmentResults(investmentData)}/>
+      <Investment_Form investmentData={investmentData} onUpdateData={handleUpdateData}/>
+      <Investment_Table onResultOfInvestment={calculateInvestmentResults(investmentData)}/>
     </div>
 
   )

@@ -1,9 +1,10 @@
 import './Investment_Table.css';
 import { formatter } from '../../util/investment';
 
-function Investment_Table({investmentData, resultOfInvestment}) {
+function Investment_Table({onResultOfInvestment}) {
 
-    
+  console.log(onResultOfInvestment);
+
   return (
     <table id ="result"> 
 
@@ -18,13 +19,18 @@ function Investment_Table({investmentData, resultOfInvestment}) {
       </thead>
 
       <tbody>
-        <tr>
-          <td>{investmentData.duration}</td>
-          <td>{investmentData.initialInvestment}</td>
-          <td>{investmentData.expectedReturn}</td>
-          <td>Formula</td>
-          <td>{investmentData.annualInvestment}</td> 
-        </tr>
+        {onResultOfInvestment.map((investment) => {
+          return (
+            <tr>
+              <td>{investment.year}</td>
+              <td>{formatter.format(investment.valueEndOfYear)}</td>
+              <td>{formatter.format(investment.interest)}</td>
+              
+              <td>{formatter.format(investment.annualInvestment)}</td>
+              <td>{formatter.format(investment.valueEndOfYear + investment.annualInvestment)}</td>
+            </tr>
+          )
+        })}
       </tbody>
 
     </table>
@@ -32,3 +38,4 @@ function Investment_Table({investmentData, resultOfInvestment}) {
 }
 
 export default Investment_Table
+
