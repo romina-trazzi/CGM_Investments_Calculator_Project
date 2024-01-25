@@ -1,0 +1,33 @@
+@media (max-width: 599px) {
+
+    /* Table */
+    #result {
+        width: 100%;
+        margin: 3rem auto;
+    }
+
+    /* Table T-head */
+    #result thead tr {
+        font-size: 0.8rem
+    }
+
+    /* Table T-body */  
+    
+    #result tbody tr {
+        margin-top: 0.8rem; 
+    }
+}
+
+@media (min-width: 600px) and (max-width: 799px) {
+    #result {
+        width: 80%;
+
+    }
+}
+
+@media (min-width: 800px) and (max-width: 999px) {
+    #result {
+        width: 60%;
+
+    }
+}

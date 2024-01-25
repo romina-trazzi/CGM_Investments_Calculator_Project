@@ -1,0 +1,29 @@
+@media (max-width: 599px) {
+
+    form {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        
+        & #user-input input {
+            padding: 1.5rem 0.5rem;
+        } 
+    }
+}
+
+@media (min-width: 600px) and (max-width: 799px) {
+    form {
+        width: 80%;
+    }
+
+}
+
+@media (min-width: 800px) and (max-width: 999px) {
+    form {
+        width: 60%;
+    }
+
+}
+
+
+

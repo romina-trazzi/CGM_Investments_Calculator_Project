@@ -1,4 +1,5 @@
 import './Investment_Table.css';
+import './mq_Investment_Table.css'
 import { formatter } from '../../util/investment';
 
 function Investment_Table({investmentData, onResultOfInvestment}) {

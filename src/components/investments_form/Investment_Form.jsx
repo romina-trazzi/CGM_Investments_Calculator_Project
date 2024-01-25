@@ -1,8 +1,8 @@
 import './Investment_Form.css';
+import './mq_Investment_Form.css';
 
 function Investment_Form({investmentData, onUpdateData}) {
-    
-    
+
     // HandlerFunction
     function inputChangeHandler (event) {
         const { name, value } = event.target
