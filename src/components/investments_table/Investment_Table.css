@@ -1,9 +1,9 @@
 /* Table */
-
 #result {
    width: 50%;
    height: auto;
    margin: 4rem auto;
+   table-layout: fixed;
 }
 
 /* Table T-head */

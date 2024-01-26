@@ -20,16 +20,16 @@ function Investment_Form({investmentData, onUpdateData}) {
     return (
         <form>
             <div className="formData">
-                <div className="input_group">
+                <div className="input-group">
                     <div id="user-input">
                         <label>INITIAL INVESTMENT</label>
                         <input 
                             type="number" 
                             name="initialInvestment" 
                             placeholder="Initial Investment"
-                            value={investmentData.initialInvestment}
-                            min="0" 
+                            value={investmentData.initialInvestment}  
                             onChange={inputChangeHandler} 
+                            required
                         />
                     </div>
                     <div id="user-input">
@@ -38,13 +38,13 @@ function Investment_Form({investmentData, onUpdateData}) {
                             type="number" 
                             name="expectedReturn" 
                             placeholder="Expected Return"
-                            value={investmentData.expectedReturn} 
-                            min="0" 
+                            value={investmentData.expectedReturn}  
                             onChange={inputChangeHandler}
+                            required
                         />
                     </div>
                 </div>
-                <div className="input_group">
+                <div className="input-group">
 
                     <div id="user-input">
                         <label>ANNUAL INVESTMENT</label>
@@ -53,8 +53,8 @@ function Investment_Form({investmentData, onUpdateData}) {
                             name="annualInvestment" 
                             placeholder="Annual Investment" 
                             value={investmentData.annualInvestment}
-                            min="0" 
                             onChange={inputChangeHandler} 
+                            required
                         />
                     </div>
                     <div id="user-input">
@@ -67,6 +67,7 @@ function Investment_Form({investmentData, onUpdateData}) {
                             min="0" 
                             max="20"  
                             onChange={inputChangeHandler}
+                            required
                         />                     
                     </div> 
                 </div>

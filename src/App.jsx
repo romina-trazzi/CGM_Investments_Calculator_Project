@@ -10,10 +10,10 @@ function App() {
   
   // Initial DataSet
   const [investmentData, setInvestmentData] = useState({
-      initialInvestment: 10000,
-      annualInvestment: 1200,
-      expectedReturn: 6,
-      duration: 0
+    initialInvestment: 10000,
+    annualInvestment: 1200,
+    expectedReturn: 6,
+    duration: 0
   })
 
   // Updating state with new investment
@@ -30,13 +30,13 @@ function App() {
   }
   
   return (
-    <div>
+    <>
       <Header />
       <Investment_Form investmentData={investmentData} onUpdateData={handleUpdateData}/>
         {investmentData.duration === 0 ? durationParagraph : 
           <Investment_Table investmentData={investmentData} onResultOfInvestment={calculateInvestmentResults(investmentData)}/>
         }
-    </div>
+    </>
 
   )
 }

@@ -24,7 +24,7 @@ function Investment_Table({investmentData, onResultOfInvestment}) {
           const totalAmountInvested = investment.valueEndOfYear - totalInterest;
           
           return (
-            <tr>
+            <tr key={investment.year}>
               <td>{investment.year}</td>
               <td>{formatter.format(investment.valueEndOfYear)}</td>
               <td>{formatter.format(investment.interest)}</td>
