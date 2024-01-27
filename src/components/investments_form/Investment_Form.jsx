@@ -73,7 +73,7 @@ function Investment_Form({investmentData, onUpdateData}) {
                 </div>
             </div>
          
-        </form>    
+        </form>   
     )
 }
 
